@@ -3,15 +3,12 @@
 import { ODataEntity, ODataFetchFactory } from "@brunomon/odata-fetch-factory";
 import { fetchFactory } from "../libs/fetchFactory";
 
-let webApiExpedientes = SERVICE_URL;
+let webApiAmparos = SERVICE_URL;
 let webApi = SERVICE_URL + "/api";
 
-const expedienteOdataFactory = ODataFetchFactory({
+export const OspeconServicios = ODataFetchFactory({
     fetch: fetch,
-    domain: webApiExpedientes,
+    domain: "https://www.uocra.net/OspeconServicios",
 });
 
-export const loginFetch = fetchFactory(webApi, "LoginOS");
-export const logonFetch = ODataEntity(expedienteOdataFactory, "Logon");
-export const recuperoFetch = ODataEntity(expedienteOdataFactory, "PedirRecupero");
-export const cambiarPasswordFetch = ODataEntity(expedienteOdataFactory, "CambiarPassword");
+export const consultarFetch = fetchFactory(webApi, "Consulta"); //Llamo al Index del controller
