@@ -11,7 +11,7 @@ import { store } from "./redux/store";
 import { captureMedia } from "./redux/ui/actions";
 import { goTo } from "./redux/routing/actions";
 import { viewManager } from "./views/manager";
-import { login } from "./redux/autorizacion/actions";
+
 import { register as registerSW, activate as activateSW } from "./libs/serviceWorker";
 
 if (process.env.NODE_ENV === "production") {
@@ -50,3 +50,17 @@ export default {
         store.dispatch(goTo("serMiembro"));
     },
 };
+
+import { consultar as TraerAmparo } from "./redux/consulta/actions";
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const pNroCarpeta = urlParams.get("qNroCapeta");
+
+/* if (pNroCarpeta != undefined && pNroCarpeta != null && pNroCarpeta != "") {
+    store.dispatch(TraerAmparo(pNroCarpeta));
+} */
+//store.dispatch(TraerAmparo(pNroCarpeta));
+
+let NroCarpeta = "123F";
+store.dispatch(TraerAmparo(NroCarpeta));

@@ -7,6 +7,7 @@ import { layoutsCSS } from "../views/ui/layouts";
 import { getLayout } from "../redux/screens/screenLayouts";
 import { goTo } from "../redux/routing/actions";
 import { formTest } from "./componentes/formTest";
+import { formConsulta } from "./componentes/formConsulta";
 import { menuPrincipal } from "./headers/menu";
 import { spinner } from "@brunomon/template-lit/src/views/css/spinner";
 import { gridLayout } from "@brunomon/template-lit/src/views/css/gridLayout";
@@ -57,7 +58,8 @@ export class viewManager extends connect(store, MEDIA_CHANGE, SCREEN, SELECTION)
         return html`
             <div class="spinner" anillo fixed hidden></div>
             <menu-principal area="header"></menu-principal>
-            <form-test area="body"></form-test>
+            <!-- <form-test area="body"></form-test> -->
+            <form-consulta></form-consulta>
         `;
     }
 

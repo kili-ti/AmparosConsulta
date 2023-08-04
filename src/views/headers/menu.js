@@ -10,7 +10,7 @@ import { logo } from "@brunomon/template-lit/src/views/css/logo";
 import { select } from "@brunomon/template-lit/src/views/css/select";
 import { button } from "@brunomon/template-lit/src/views/css/button";
 import { MENU, RIGHT, PERSON } from "../../../assets/icons/svgs";
-import { logout } from "../../redux/autorizacion/actions";
+
 import { gesturesController } from "@brunomon/template-lit/src/views/controllers/gesturesController";
 import { selection } from "../../redux/ui/actions";
 
@@ -75,6 +75,7 @@ export class menuPrincipal extends connect(store, MEDIA_CHANGE, SCREEN, USUARIO,
                 justify-content: end;
                 grid-gap: 2rem;
                 padding: 2rem;
+                visibility: hidden;
             }
 
             :host([media-size="large"]) .menu-button,
@@ -162,7 +163,7 @@ export class menuPrincipal extends connect(store, MEDIA_CHANGE, SCREEN, USUARIO,
             <div id="velo" @click=${this.toggleMenu}></div>
             <div class="grid column">
                 <div class="inner-grid column start">
-                    <div class="logo"></div>
+                    <!-- <div class="logo"></div> -->
                     <h1 id="titulo" @click="${this.click}" .option=${"main"}>${__DESCRIPTION__}</h1>
                     <div id="version">${__VERSION__}</div>
                 </div>
